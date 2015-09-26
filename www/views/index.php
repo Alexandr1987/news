@@ -18,6 +18,6 @@
         <a href="/news_name.php">more</a>
     </p>
 </div>
-<a href="form.php">Добавить новость</a>
+<a href="/views/form.php">Добавить новость</a>
 </body>
 </html>
