@@ -5,19 +5,26 @@
     <title>News</title>
 </head>
 <body>
-<div class="news">
-    <h2>News name</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur
-        adipisicing elit. Autem beatae consectetur
-        culpa, ducimus ea fugiat illum iste itaque
-        iusto, maiores obcaecati pariatur praesentium
-        quasi repellendus sapiente, sunt voluptates
-        voluptatibus! Assumenda, autem doloremque
-        dolorum eveniet iste magnam nesciunt
-        perspiciatis porro totam.
-        <a href="/news_name.php">more</a>
-    </p>
-</div>
+
+
+<?php
+include_once __DIR__.'/../modules/sql.php';
+
+ ?>
+<?php $newses = get_sql();?>
+<?php
+    foreach ($newses as $key => $value):?>
+        <?php
+
+            $id = $value["id"];
+
+        ?>
+        <h2><?php echo $value["title"]; ?></h2><br>
+        <p><?php echo $value["text"];?></p>
+        <p><?php echo $value["date"];?></p>
+        <a href="../views/news_name.php?id=<?=$id ?>">more</a>
+<?php endforeach; ?>
+<br>
 <a href="/views/form.php">Добавить новость</a>
 </body>
 </html>
