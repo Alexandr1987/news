@@ -5,10 +5,11 @@
     <title>Forms</title>
 </head>
 <body>
-<form action="add.php" enctype="multipart/form-data" method="POST">
+<form action="../controler/add.php" method="POST">
     Имя файла: <input type="text" name="title_news">
-    Отправить этот файл: <input name="text_news" type="file"/>
+    Отправить этот файл: <textarea name="text_news" style="width:300px;height:100px;"></textarea>
     <input type="submit" value="Добавить файл" name="submit"/>
+
 </form>
 </body>
 </html>
