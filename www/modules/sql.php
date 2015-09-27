@@ -13,26 +13,25 @@ function sql_connect(){
 
 
 
-sql_connect();
+
 
 function get_sql()
-{
-    $result = mysql_query('SELECT * FROM new_news');
+{   sql_connect();
+    $result = mysql_query('SELECT * FROM new_news ORDER BY date ASC');
     $newses = [];
     while ($row = mysql_fetch_assoc($result))
         $newses[] = $row;
     return $newses;
 }
 
-$newses = get_sql();
+
 
 //Записываем имя файла в базу данных
-$name =$_POST['title_news'];
 
-function rec($name)
+function rec($name,$text)
 {
     sql_connect();
-    mysql_query("INSERT INTO new_news(title, path) VALUES ('" . $name . "','" . $name . "')");
+    mysql_query("INSERT INTO new_news(title, text, date) VALUES ('" . $name . "','" . $text . "',NOW())");
 }
 /*
 
