@@ -6,4 +6,7 @@
  * Time: 21:11
  */
 
-include_once '/views/index.php';
+require __DIR__.'/modules/sql.php';
+
+header('Location: /views/index.php');
+
